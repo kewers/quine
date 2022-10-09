@@ -1,5 +1,11 @@
 <html><head></head><body>
 <h1>Hello, Quine!</h1>
+<h2>Open the developer console.</h2>
+<script>
+    a='a=bar;a=(foo => {return (a.replace(/bar/,(JSON.stringify(a))))})()';a=(foo => {return (a.replace(/bar/,(JSON.stringify(a))))})()
+    console.log(a)
+    console.log(a === eval(eval(a)))
+</script>
 <style>
     * {
         margin-left: 1rem;
@@ -14,13 +20,11 @@
     body::after {content:'</body>'}
     h1::before {content:'<h1>'}
     h1::after {content:'</h1>'}
+    h2::before {content:'<h2>'}
+    h2::after {content:'</h2>'}
     style::before {content:'<style>'}
     style::after {content:'<\/style>'}
     script::before {content:'<script>'}
     script::after {content:'<\/script>'}
 </style>
 </body></html>
-<script>
-    a='a=bar;a=(foo => {return (a.replace(/bar/,(JSON.stringify(a))))})()';a=(foo => {return (a.replace(/bar/,(JSON.stringify(a))))})()
-    console.log(a === eval(eval(a)))
-</script>
