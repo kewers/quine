@@ -1,10 +1,9 @@
-<html><head></head><body>
 <h1>Hello, Quine!</h1>
 <h2>Open the developer console.</h2>
 <script>
-    a='a=bar;a=(foo => {return (a.replace(/bar/,(JSON.stringify(a))))})()';a=(foo => {return (a.replace(/bar/,(JSON.stringify(a))))})()
+    a="a=bar;a=(foo=>a.replace(/bar/,JSON.stringify(a)))()";a=(foo=>a.replace(/bar/,JSON.stringify(a)))()
     console.log(a)
-    console.log(a === eval(eval(a)))
+    console.log("Program `a` equals `eval(a)`?", a === eval(a))
 </script>
 <style>
     * {
@@ -24,7 +23,7 @@
     h2::after {content:'</h2>'}
     style::before {content:'<style>'}
     style::after {content:'<\/style>'}
+    script { font-size: 1.4rem; }
     script::before {content:'<script>'}
     script::after {content:'<\/script>'}
 </style>
-</body></html>
