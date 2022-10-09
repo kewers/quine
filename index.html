@@ -2,9 +2,16 @@
 <h1>Hello, Quine!</h1>
 <style>
     * {
+        margin-left: 1rem;
         display:block;
         white-space: pre-wrap;
     }
+    html::before {content:'<html>'}
+    html::after {content:'</html>'}
+    head::before {content:'<head>'}
+    head::after {content:'</head>'}
+    body::before {content:'<body>'}
+    body::after {content:'</body>'}
     h1::before {content:'<h1>'}
     h1::after {content:'</h1>'}
     style::before {content:'<style>'}
